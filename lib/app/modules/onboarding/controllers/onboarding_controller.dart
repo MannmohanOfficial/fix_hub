@@ -1,11 +1,15 @@
+import 'package:fix_hub/constants/introduction/intro_items.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class OnboardingController extends GetxController {
-  //TODO: Implement OnboardingController
+  final introItems = IntroItems().items;
+  late PageController pageController;
 
   final count = 0.obs;
   @override
   void onInit() {
+    pageController = PageController(initialPage: 0);
     super.onInit();
   }
 
@@ -16,6 +20,7 @@ class OnboardingController extends GetxController {
 
   @override
   void onClose() {
+    pageController.dispose();
     super.onClose();
   }
 
